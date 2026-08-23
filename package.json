@@ -1,0 +1,24 @@
+{
+  "name": "hairstyle",
+  "version": "1.0.0",
+  "description": "Landing Page for a Hairstyle Salon",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css --minify",
+    "watch": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css --watch"
+  },
+  "keywords": [],
+  "author": "Mirko Freschi",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "tailwindcss": "^4.3.3"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.2.1",
+    "lenis": "^1.3.26"
+  },
+  "allowScripts": {
+    "lenis@1.3.26": true
+  }
+}

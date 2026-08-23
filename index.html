@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURA STUDIO | Premium Hair </title>
+    <link rel="stylesheet" href="./dist/output.css">
+    <link rel="stylesheet" href="./node_modules/lenis/dist/lenis.css">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="flex items-center justify-between p-5 site-nav h-fit">
+            <div id="logo" class="text-xl font-bold site-logo font-display text-ink">
+                <h1>AURA STUDIO</h1>
+            </div>
+            <div id="navbar" class="site-nav__links">
+                <ul class="flex flex-row items-center justify-between gap-5">
+                    <li>
+                        <a href="#hero">Home</a>
+                    </li>
+                    <li>
+                        <a href="#services">Services</a>
+                    </li>
+                    <li>
+                        <a href="#stylist">Stylist</a>
+                    </li>
+                    <li>
+                        <a href="#gallery">Gallery</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="book" class="site-nav__cta">
+                <button type="button"
+                class="px-4 py-3 button button--compact bg-brand rounded-card">
+                    Book Now
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="relative isolate flex min-h-[calc(100svh-4.75rem)] scroll-mt-19 items-center overflow-hidden">
+            <img src="./img/hero.png" alt="hero"
+            class="absolute inset-0 object-cover object-center w-full h-full -z-30"
+            fetchpriority="high">
+            <div class="absolute inset-0 bg-gray-400/40 -z-20"></div>
+            <div class="flex items-center justify-center w-full h-full">
+                <h1 class="font-bold text-center uppercase reveal">
+                    Your Style.
+                    <br>
+                    Your Signature.
+                </h1>
+            </div>
+        </section>
+        <section id="services"
+        class="min-h-screen mx-8 mt-32 section section--services">
+            <h1 class="w-full text-center uppercase">
+                Our Services
+            </h1>
+            <div class="flex flex-row items-center justify-between gap-12 mt-12 services-layout">
+                <div class="flex flex-col w-full gap-8 services-list left-column">
+                    <h3>
+                        Masterful Execution
+                    </h3>
+                    <div class="flex flex-col gap-3 pb-3 border-b-2 service-card border-b-ink/40">
+                        <h6>
+                            Precision Haircut
+                        </h6>
+                        <div class="flex items-center justify-between service-card__details">
+                            <p>
+                                Sculpting form and flow to your unique structure.
+                            </p>
+                            <span class="font-bold text-ink">
+                                From $120
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col gap-3 service-card">
+                        <h6>
+                            Dimensional Color
+                        </h6>
+                        <div class="flex items-center justify-between pb-3 border-b-2 service-card__details border-b-ink/40">
+                            <p>
+                                Sculpting form and flow to your unique structure.
+                            </p>
+                            <span class="font-bold text-ink">
+                                From $180
+                            </span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-3 service-card">
+                        <h6>
+                            Balayage
+                        </h6>
+                        <div class="flex items-center justify-between pb-3 border-b-2 service-card__details border-b-ink/40">
+                            <p>
+                                Hand-painted highlights for effortless movement.
+                            </p>
+                            <span class="font-bold text-ink">
+                                From $250
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative services-visual right-column w-5xl">
+                    <img src="./img/sallon/sallon.png" alt="Saloon"
+                    class="services-visual__image rounded-card">
+                    <div id="badje"
+                    class="absolute p-5 text-center -bottom-10 -left-10 bg-surface w-fit rounded-card">
+                        <h2>
+                            15+
+                        </h2>
+                        <p>
+                            Years of Excellence
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="trasformation" class="flex flex-col items-center justify-center gap-8 mt-32 section section--transformation scroll-mt-8">
+            <h1 class="w-full text-center uppercase">
+                The Transformation
+            </h1>
+            <figure class="comparison-figure w-xl">
+                <div class="comparison-slider relative isolate aspect-square overflow-hidden rounded-card bg-foreground shadow-[0_18px_45px_-28px_rgb(10_10_10_/_0.55)]">
+                    <img
+                    class="absolute inset-0 block object-cover object-left size-full"
+                    src="./img/after.png"
+                    alt="After the stylist's work">
+                    <img
+                    class="absolute inset-0 block object-cover object-left comparison-slider__before size-full"
+                    src="./img/before.png"
+                    alt="Before the stylist's work">
+                    <span class="absolute top-4 left-4 z-10 rounded-full bg-ink/75 px-3 py-1 text-xs font-semibold tracking-[0.16em] text-surface uppercase backdrop-blur-sm" aria-hidden="true">Before</span>
+                    <span class="absolute top-4 right-4 z-10 rounded-full bg-surface/85 px-3 py-1 text-xs font-semibold tracking-[0.16em] text-ink uppercase backdrop-blur-sm" aria-hidden="true">After</span>
+                    <input type="range" name="comparison" id="comparison" min="0" max="100" value="50"
+                    aria-label="Percentage of the before image shown"
+                    class="absolute inset-0 z-30 opacity-0 appearance-none comparison-slider__range size-full cursor-ew-resize">
+                    <span class="comparison-slider__divider absolute top-0 bottom-0 z-20 w-0.5 -translate-x-1/2 bg-surface shadow-[0_0_0_1px_rgb(10_10_10_/_0.15)]" aria-hidden="true"></span>
+                    <span class="comparison-slider__handle absolute top-1/2 left-1/2 z-20 grid size-16 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-ink/10 bg-surface text-ink shadow-[0_8px_24px_rgb(10_10_10_/_0.25)]" aria-hidden="true">
+                        <svg class="h-5 w-7" viewBox="0 0 28 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.0737 0.443697C9.93425 0.303105 9.76835 0.191514 9.58556 0.115361C9.40277 0.0392077 9.20672 0 9.0087 0C8.81068 0 8.61462 0.0392077 8.43183 0.115361C8.24904 0.191514 8.08314 0.303105 7.9437 0.443697L0.443697 7.9437C0.303105 8.08314 0.191513 8.24904 0.11536 8.43183C0.0392074 8.61462 0 8.81068 0 9.0087C0 9.20672 0.0392074 9.40277 0.11536 9.58556C0.191513 9.76835 0.303105 9.93425 0.443697 10.0737L7.9437 17.5737C8.08314 17.7143 8.24904 17.8259 8.43183 17.902C8.61462 17.9782 8.81068 18.0174 9.0087 18.0174C9.20672 18.0174 9.40277 17.9782 9.58556 17.902C9.76835 17.8259 9.93425 17.7143 10.0737 17.5737C10.2143 17.4343 10.3259 17.2684 10.402 17.0856C10.4782 16.9028 10.5174 16.7067 10.5174 16.5087C10.5174 16.3107 10.4782 16.1146 10.402 15.9318C10.3259 15.749 10.2143 15.5831 10.0737 15.4437L3.6237 9.0087L10.0737 2.5737C10.2143 2.43425 10.3259 2.26835 10.402 2.08556C10.4782 1.90277 10.5174 1.70672 10.5174 1.5087C10.5174 1.31068 10.4782 1.11462 10.402 0.931832C10.3259 0.749043 10.2143 0.583142 10.0737 0.443697ZM26.5737 7.9437L19.0737 0.443697C18.9338 0.30384 18.7678 0.192899 18.5851 0.117208C18.4023 0.0415178 18.2065 0.0025599 18.0087 0.0025599C17.6092 0.0025599 17.2262 0.161242 16.9437 0.443697C16.8038 0.583555 16.6929 0.749591 16.6172 0.932324C16.5415 1.11506 16.5026 1.31091 16.5026 1.5087C16.5026 1.90815 16.6612 2.29124 16.9437 2.5737L23.3937 9.0087L16.9437 15.4437C16.8031 15.5831 16.6915 15.749 16.6154 15.9318C16.5392 16.1146 16.5 16.3107 16.5 16.5087C16.5 16.7067 16.5392 16.9028 16.6154 17.0856C16.6915 17.2684 16.8031 17.4343 16.9437 17.5737C17.0831 17.7143 17.249 17.8259 17.4318 17.902C17.6146 17.9782 17.8107 18.0174 18.0087 18.0174C18.2067 18.0174 18.4028 17.9782 18.5856 17.902C18.7684 17.8259 18.9343 17.7143 19.0737 17.5737L26.5737 10.0737C26.7143 9.93425 26.8259 9.76835 26.902 9.58556C26.9782 9.40277 27.0174 9.20672 27.0174 9.0087C27.0174 8.81068 26.9782 8.61462 26.902 8.43183C26.8259 8.24904 26.7143 8.08314 26.5737 7.9437Z" fill="currentColor"/>
+                    </svg>
+                    </span>
+                </div>
+            </figure>
+        </section>
+
+        <section id="stylist" class="min-h-screen mt-32 section section--stylist">
+            <h1 class="w-full text-center uppercase">
+                Our Stylist
+            </h1>
+            <p class="w-full pt-5 text-center text-neutral">
+                A collective of visionary stylists and master barbers dedicated to the art of individual expression. Meet Our Artisans.
+            </p>
+            <div class="flex justify-between gap-5 mx-5 stylist-grid">
+                <article class="flex flex-col justify-start gap-4 stylist-card left-column">
+                    <img src="./img/stylist/stylist1.png" alt="Elena Rossi"
+                    class="stylist-card__image">
+                    <div class="presentation text-ink">
+                        <h4>
+                            Elena Rossi
+                        </h4>
+                        <p>
+                            Creative Director & Master Colorist
+                        </p>
+                    </div>
+                    <p class="font-medium">
+                        Specialty: Dimensional Balayage & Precision Cutting
+                    </p>
+                    <span class="pl-4 ml-2 text-2xl font-medium border-l-2 border-l-ink font-display">
+                        "Hair is the canvas; light is the medium."
+                    </span>
+                </article>
+                
+                <article class="flex flex-col justify-start gap-4 stylist-card stylist-card--offset right-column mt-50">
+                    <img src="./img/stylist/stylist2.png" alt="Marcus Thorne"
+                    class="stylist-card__image">
+                    <div class="presentation text-ink">
+                        <h4>
+                            Marcus Thorne
+                        </h4>
+                        <p>
+                            Principal Barber
+                        </p>
+                    </div>
+                    <p class="font-medium">
+                        Specialty: Traditional Straight-Razor Shaves & Modern Sculpting
+                    </p>
+                    <span class="pl-4 ml-2 text-2xl font-medium border-l-2 border-l-ink font-display">
+                        "Precision is the bridge between trend and timelessness."
+                    </span>
+                </article>
+            </div>
+            <div class="py-12 my-16 text-center stylist-statement bg-ink">
+                <h1 class="leading-16 text-surface">
+                    Exceptional talent.
+                    <br>
+                    <span class="text-brand">
+                        Unparalleled vision.
+                    </span>
+                </h1>
+            </div>
+        </section>
+
+        <section id="gallery" class="section section--gallery">
+            <h1 class="w-full text-center uppercase">
+                The Artistry Archive
+            </h1>
+            <p class="w-full p-5 text-center text-neutral">
+                Hair is more than a canvas; it is a sculptural medium. Our archive showcases the meticulous craftsmanship, avant-garde techniques, and bespoke elegance defining LUMIA Studio's approach to structural and fluid hair design.
+            </p>
+
+            <div class="gap-5 space-y-5 columns-1 sm:columns-2 md:columns-3">
+                <div class="break-inside-avoid">
+                    <img class="w-full h-auto rounded-lg" src="./img/cut/cut1.png" alt="Taglio1">
+                </div>
+                <div class="break-inside-avoid">
+                    <img class="w-full h-auto rounded-lg" src="./img/cut/cut2.png" alt="Taglio2">
+                </div>
+                <div class="break-inside-avoid">
+                    <img class="w-full h-auto rounded-lg" src="./img/cut/cut3.png" alt="Taglio3">
+                </div>
+                <div class="break-inside-avoid">
+                    <img class="w-full h-auto rounded-lg" src="./img/cut/cut5.jpeg" alt="Taglio5">
+                </div>
+                <div class="break-inside-avoid">
+                    <img class="w-full h-auto rounded-lg" src="./img/cut/cut4.webp" alt="Taglio4">
+                </div>
+                <div class="break-inside-avoid">
+                    <img class="w-full h-auto rounded-lg" src="./img/cut/cut6.jpeg" alt="Taglio6">
+                </div>
+            </div>
+            
+        </section>
+
+        <section id="info" class="flex items-center justify-between p-12 my-12 bg-foreground">
+            <div class="flex flex-col justify-start gap-4">
+                <h3>
+                    Visit The Studio
+                </h3>
+                <p>
+                    Experience the pinnacle of hair artistry in the heart of the city.
+                </p>
+                <ul class="flex flex-col gap-4">
+                    <li>
+                        <span class="text-primary">
+                            Address
+                        </span>
+                        <p>
+                            124 Luxury Row, Atelier District, NY 10012
+                        </p>
+                    </li>
+                    <li>
+                        <span class="text-primary">
+                            Hours
+                        </span>
+                        <p>
+                            Tue – Sat: 10am – 8pm
+                        </p>
+                    </li>
+                    <li>
+                        <span class="text-primary" >
+                            Phone
+                        </span>
+                        <p>
+                            +1 (212) 555-0198
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="contact-section__cta">
+                <button type="button"
+                class="px-4 py-2 bg-brand rounded-card">
+                    <a href="tel:+1 (212) 555-0198">Book Your Appointment</a>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="flex items-center justify-between px-12 py-16">
+        <div>
+            <h1>
+                Aura Studio
+            </h1>
+            <br>
+            <p>
+                &copy 2026 Aura Studio. ALL RIGHTS RESERVED
+            </p>
+        </div>
+        <nav class="">
+            <ul class="flex items-center gap-5 justify-baseline">
+                <li>
+                    <a href="#">Instagram</a>
+                </li>
+                <li>
+                    <a href="#">TikTok</a>
+                </li>
+                <li>
+                    <a href="#">Facebook</a>
+                </li>
+                <li>
+                    <a href="#">Terms</a>
+                </li>
+                <li>
+                    <a href="#">Privacy</a>
+                </li>
+            </ul>
+        </nav>
+    </footer>
+
+    <script src="./node_modules/lenis/dist/lenis.min.js"></script>
+    <script src="./scripts/index.js"></script>
+</body>
+</html>

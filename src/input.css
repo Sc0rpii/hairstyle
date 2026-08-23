@@ -1,0 +1,109 @@
+
+@import "tailwindcss";
+
+@font-face {
+    font-family: "Bodoni Moda";
+    src: url("../font/BodoniModa-VariableFont_opsz,wght.ttf") format("truetype");
+    font-weight: 400 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("../font/Inter-VariableFont_opsz,wght.ttf") format("truetype");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@theme {
+    --color-brand: #fdcb76;
+    --color-primary: #644815;
+    --color-ink: #0a0a0a;
+    --color-neutral: #666666;
+    --color-surface: #faf7f6;
+    --color-foreground: #f2f0f0;
+
+    --font-display: "Bodoni Moda", serif;
+    --font-sans: "Inter", sans-serif;
+
+    --text-button: 14px;
+    --text-body: 16px;
+    --text-display: 64px;
+
+    --radius-card: 1rem;
+}
+
+@layer base {
+    :root{
+        --headline-base: var(--text-display);
+    }
+
+    html {
+        --scroll-progress: 0;
+        background: var(--color-surface);
+    }
+
+    body {
+        color: var(--color-neutral);
+        font-family: var(--font-sans);
+        font-weight: 500;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        --headline-scale: 1;
+        font-family: var(--font-display);
+        font-size: calc(var(--headline-base) * var(--headline-scale));
+        font-weight: 500;
+        line-height: 0.94;
+        color: var(--color-ink);
+    }
+
+        h1 { --headline-scale: 1; }    /* 64px */
+        h2 { --headline-scale: 0.8; }  /* 51.2px */
+        h3 { --headline-scale: 0.65; } /* 41.6px */
+        h4 { --headline-scale: 0.5; }  /* 32px */
+        h5 { --headline-scale: 0.4; }  /* 25.6px */
+        h6 { --headline-scale: 0.32; } /* 20.48px */
+}
+#logo h1{
+    font-size: 1.8rem;
+}
+
+#hero h1 {
+    font-size: clamp(4rem, 9vw, 9rem);
+}
+#badje{
+    box-shadow: inset -1px 2px 8px 1px #66666650,
+        -1px 2px 8px -1px #66666650;
+}
+
+/* The range input controls a CSS custom property; these rules cover the
+   dynamic clipping and keyboard focus state that utility classes cannot. */
+.comparison-slider {
+    --comparison-position: 50%;
+}
+
+.comparison-slider__before {
+    clip-path: inset(0 calc(100% - var(--comparison-position)) 0 0);
+}
+
+.comparison-slider__divider,
+.comparison-slider__handle {
+    left: var(--comparison-position);
+    pointer-events: none;
+}
+
+.comparison-slider__range:focus-visible ~ .comparison-slider__handle {
+    outline: 3px solid var(--color-brand);
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .comparison-slider__before,
+    .comparison-slider__divider,
+    .comparison-slider__handle {
+        transition: left 120ms ease-out, clip-path 120ms ease-out;
+    }
+}
