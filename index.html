@@ -1,113 +1,136 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AURA STUDIO | Premium Hair </title>
+    <title>AURA STUDIO | Premium Hair Salon</title>
     <link rel="stylesheet" href="./dist/output.css">
     <link rel="stylesheet" href="./node_modules/lenis/dist/lenis.css">
 </head>
-<body>
-    <header class="site-header">
-        <nav class="flex items-center justify-between p-5 site-nav h-fit">
-            <div id="logo" class="text-xl font-bold site-logo font-display text-ink">
-                <h1>AURA STUDIO</h1>
+<body class="bg-surface text-neutral antialiased selection:bg-brand/30 selection:text-ink">
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b border-transparent site-header bg-surface/70 backdrop-blur-md">
+        <nav class="flex items-center justify-between px-6 py-4 md:px-12 md:py-5 site-nav h-fit max-w-7xl mx-auto">
+            <div id="logo" class="site-logo font-display text-ink">
+                <a href="#hero" class="hover:opacity-80 transition-opacity">
+                    <h1 class="font-bold tracking-wider uppercase text-lg md:text-xl">AURA STUDIO</h1>
+                </a>
             </div>
-            <div id="navbar" class="site-nav__links">
-                <ul class="flex flex-row items-center justify-between gap-5">
+            <div id="navbar" class="site-nav__links hidden md:block">
+                <ul class="flex flex-row items-center justify-between gap-8 text-sm tracking-widest uppercase">
                     <li>
-                        <a href="#hero">Home</a>
+                        <a href="#hero" class="relative py-2 font-semibold text-ink/70 hover:text-ink transition-colors duration-300 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-brand after:transform after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left">Home</a>
                     </li>
                     <li>
-                        <a href="#services">Services</a>
+                        <a href="#services" class="relative py-2 font-semibold text-ink/70 hover:text-ink transition-colors duration-300 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-brand after:transform after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left">Services</a>
                     </li>
                     <li>
-                        <a href="#stylist">Stylist</a>
+                        <a href="#stylist" class="relative py-2 font-semibold text-ink/70 hover:text-ink transition-colors duration-300 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-brand after:transform after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left">Stylist</a>
                     </li>
                     <li>
-                        <a href="#gallery">Gallery</a>
+                        <a href="#gallery" class="relative py-2 font-semibold text-ink/70 hover:text-ink transition-colors duration-300 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-brand after:transform after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left">Gallery</a>
                     </li>
                 </ul>
             </div>
-            <div id="book" class="site-nav__cta">
-                <button type="button"
-                class="px-4 py-3 button button--compact bg-brand rounded-card">
+            <div id="book" class="site-nav__cta hidden md:block">
+                <a href="#info" class="inline-block px-5 py-2.5 bg-brand text-ink font-semibold rounded-card hover:bg-brand/90 hover:scale-105 active:scale-95 transition-all duration-300 shadow-sm text-sm tracking-wider uppercase">
                     Book Now
-                </button>
+                </a>
             </div>
+
+            <button id="menu-toggle" type="button" class="relative z-50 flex flex-col justify-between w-6 h-4 md:hidden group focus:outline-none cursor-pointer" aria-label="Toggle Menu">
+                <span class="w-full h-0.5 bg-ink transition-all duration-300 origin-center group-[.open]:rotate-45 group-[.open]:translate-y-[6px]"></span>
+                <span class="w-full h-0.5 bg-ink transition-all duration-300 group-[.open]:opacity-0"></span>
+                <span class="w-full h-0.5 bg-ink transition-all duration-300 origin-center group-[.open]:-rotate-45 group-[.open]:-translate-y-[6px]"></span>
+            </button>
         </nav>
     </header>
 
+    <div id="mobile-menu" class="fixed top-20 right-6 z-40 w-72 h-auto p-6 rounded-card border border-ink/10 bg-surface/98 shadow-2xl backdrop-blur-xl transition-all duration-500 ease-in-out translate-x-[120%] opacity-0 md:hidden flex flex-col items-center justify-center">
+        <ul class="flex flex-col items-center gap-6 text-lg font-bold font-display text-ink tracking-widest uppercase w-full">
+            <li><a href="#hero" class="mobile-nav-link hover:text-brand transition-colors duration-300 block py-1">Home</a></li>
+            <li><a href="#services" class="mobile-nav-link hover:text-brand transition-colors duration-300 block py-1">Services</a></li>
+            <li><a href="#stylist" class="mobile-nav-link hover:text-brand transition-colors duration-300 block py-1">Stylist</a></li>
+            <li><a href="#gallery" class="mobile-nav-link hover:text-brand transition-colors duration-300 block py-1">Gallery</a></li>
+            <li class="mt-2 w-full text-center">
+                <a href="#info" class="mobile-nav-link inline-block w-full px-6 py-3.5 bg-brand text-ink text-xs font-semibold rounded-card hover:bg-brand/90 hover:scale-105 active:scale-95 transition-all duration-300 shadow-md">Book Now</a>
+            </li>
+        </ul>
+    </div>
+
     <main>
-        <section id="hero" class="relative isolate flex min-h-[calc(100svh-4.75rem)] scroll-mt-19 items-center overflow-hidden">
+        <section id="hero" class="relative isolate flex min-h-screen items-center overflow-hidden scroll-mt-24">
             <img src="./img/hero.webp" alt="hero"
-            class="absolute inset-0 object-cover object-center w-full h-full -z-30"
+            class="absolute inset-0 object-cover object-center w-full h-full -z-30 parallax-bg transition-transform duration-100 ease-out"
             fetchpriority="high">
             <div class="absolute inset-0 bg-gray-400/40 -z-20"></div>
-            <div class="flex items-center justify-center w-full h-full">
-                <h1 class="font-bold text-center uppercase reveal">
-                    Your Style.
-                    <br>
-                    Your Signature.
+            <div class="flex items-center justify-center w-full h-full px-6">
+                <h1 class="font-bold text-center uppercase font-display leading-[0.95] text-ink">
+                    <span class="block overflow-hidden py-1">
+                        <span class="inline-block translate-y-full opacity-0 transition-all duration-1000 ease-out hero-reveal-1">Your Style.</span>
+                    </span>
+                    <span class="block overflow-hidden py-1 mt-2">
+                        <span class="inline-block translate-y-full opacity-0 transition-all duration-1000 ease-out hero-reveal-2">Your Signature.</span>
+                    </span>
                 </h1>
             </div>
         </section>
         <section id="services"
-        class="min-h-screen mx-8 mt-32 section section--services">
-            <h1 class="w-full text-center uppercase">
+        class="min-h-screen max-w-6xl mx-auto px-4 md:px-8 mt-24 md:mt-32 section section--services scroll-mt-24">
+            <h1 class="w-full text-center uppercase reveal-on-scroll">
                 Our Services
             </h1>
-            <div class="flex flex-row items-center justify-between gap-12 mt-12 services-layout">
-                <div class="flex flex-col w-full gap-8 services-list left-column">
-                    <h3>
+            <div class="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-12 lg:gap-16 mt-12 md:mt-16 services-layout">
+                <div class="flex flex-col w-full lg:w-1/2 gap-8 services-list left-column reveal-on-scroll reveal-on-scroll--left">
+                    <h3 class="text-3xl md:text-4xl font-bold font-display text-ink pb-4 border-b border-ink/5">
                         Masterful Execution
                     </h3>
                     <div class="flex flex-col gap-3 pb-3 border-b-2 service-card border-b-ink/40">
-                        <h6>
+                        <h6 class="text-xl md:text-2xl font-bold font-display text-ink">
                             Precision Haircut
                         </h6>
-                        <div class="flex items-center justify-between service-card__details">
-                            <p>
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2 service-card__details">
+                            <p class="text-sm md:text-base text-neutral md:pr-4">
                                 Sculpting form and flow to your unique structure.
                             </p>
-                            <span class="font-bold text-ink">
+                            <span class="font-bold text-ink whitespace-nowrap">
                                 From $120
                             </span>
                         </div>
                     </div>
 
                     <div class="flex flex-col gap-3 service-card">
-                        <h6>
+                        <h6 class="text-xl md:text-2xl font-bold font-display text-ink">
                             Dimensional Color
                         </h6>
-                        <div class="flex items-center justify-between pb-3 border-b-2 service-card__details border-b-ink/40">
-                            <p>
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2 pb-3 border-b-2 service-card__details border-b-ink/40">
+                            <p class="text-sm md:text-base text-neutral md:pr-4">
                                 Sculpting form and flow to your unique structure.
                             </p>
-                            <span class="font-bold text-ink">
+                            <span class="font-bold text-ink whitespace-nowrap">
                                 From $180
                             </span>
                         </div>
                     </div>
                     <div class="flex flex-col gap-3 service-card">
-                        <h6>
+                        <h6 class="text-xl md:text-2xl font-bold font-display text-ink">
                             Balayage
                         </h6>
-                        <div class="flex items-center justify-between pb-3 border-b-2 service-card__details border-b-ink/40">
-                            <p>
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2 pb-3 border-b-2 service-card__details border-b-ink/40">
+                            <p class="text-sm md:text-base text-neutral md:pr-4">
                                 Hand-painted highlights for effortless movement.
                             </p>
-                            <span class="font-bold text-ink">
+                            <span class="font-bold text-ink whitespace-nowrap">
                                 From $250
                             </span>
                         </div>
                     </div>
                 </div>
-                <div class="relative services-visual right-column w-5xl">
+                <div class="relative group services-visual right-column w-full lg:w-1/2 flex justify-center lg:justify-end mt-8 lg:mt-0 reveal-on-scroll reveal-on-scroll--right">
                     <img src="./img/sallon/sallon.webp" alt="Saloon"
-                    class="services-visual__image rounded-card">
+                    class="services-visual__image rounded-card w-full max-w-md xl:max-w-lg shadow-lg transition-transform duration-700 ease-out group-hover:scale-103">
                     <div id="badje"
-                    class="absolute p-5 text-center -bottom-10 -left-10 bg-surface w-fit rounded-card">
+                    class="parallax-element absolute p-4 md:p-6 text-center -bottom-6 -left-4 md:-bottom-10 md:-left-10 bg-surface w-fit rounded-card shadow-xl border border-ink/5 z-10"
+                    style="--parallax-y: -40px;">
                         <h2>
                             15+
                         </h2>
@@ -118,11 +141,11 @@
                 </div>
             </div>
         </section>
-        <section id="trasformation" class="flex flex-col items-center justify-center gap-8 mt-32 section section--transformation scroll-mt-8">
-            <h1 class="w-full text-center uppercase">
+        <section id="trasformation" class="flex flex-col items-center justify-center gap-8 mt-24 md:mt-32 section section--transformation scroll-mt-24 px-4 max-w-6xl mx-auto">
+            <h1 class="w-full text-center uppercase reveal-on-scroll">
                 The Transformation
             </h1>
-            <figure class="comparison-figure w-xl">
+            <figure class="comparison-figure w-full max-w-2xl reveal-on-scroll reveal-on-scroll--scale">
                 <div class="comparison-slider relative isolate aspect-square overflow-hidden rounded-card bg-foreground shadow-[0_18px_45px_-28px_rgb(10_10_10_/_0.55)]">
                     <img
                     class="absolute inset-0 block object-cover object-left size-full"
@@ -147,17 +170,17 @@
             </figure>
         </section>
 
-        <section id="stylist" class="min-h-screen mt-32 section section--stylist">
-            <h1 class="w-full text-center uppercase">
+        <section id="stylist" class="min-h-screen mt-24 md:mt-32 section section--stylist scroll-mt-24 max-w-6xl mx-auto px-4">
+            <h1 class="w-full text-center uppercase reveal-on-scroll">
                 Our Stylist
             </h1>
-            <p class="w-full pt-5 text-center text-neutral">
+            <p class="w-full max-w-2xl mx-auto pt-4 text-center text-neutral text-sm md:text-base reveal-on-scroll">
                 A collective of visionary stylists and master barbers dedicated to the art of individual expression. Meet Our Artisans.
             </p>
-            <div class="flex justify-between gap-5 mx-5 stylist-grid">
-                <article class="flex flex-col justify-start gap-4 stylist-card left-column">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 mt-16 stylist-grid">
+                <article class="group flex flex-col justify-start gap-4 stylist-card left-column reveal-on-scroll reveal-on-scroll--left">
                     <img src="./img/stylist/stylist1.webp" alt="Elena Rossi"
-                    class="stylist-card__image">
+                    class="stylist-card__image rounded-card shadow-lg bg-foreground aspect-[3/4] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
                     <div class="presentation text-ink">
                         <h4>
                             Elena Rossi
@@ -169,14 +192,14 @@
                     <p class="font-medium">
                         Specialty: Dimensional Balayage & Precision Cutting
                     </p>
-                    <span class="pl-4 ml-2 text-2xl font-medium border-l-2 border-l-ink font-display">
+                    <span class="pl-4 ml-2 text-lg md:text-2xl font-medium border-l-2 border-l-ink font-display text-neutral italic">
                         "Hair is the canvas; light is the medium."
                     </span>
                 </article>
                 
-                <article class="flex flex-col justify-start gap-4 stylist-card stylist-card--offset right-column mt-50">
+                <article class="group flex flex-col justify-start gap-4 stylist-card stylist-card--offset right-column md:translate-y-16 reveal-on-scroll reveal-on-scroll--right">
                     <img src="./img/stylist/stylist2.webp" alt="Marcus Thorne"
-                    class="stylist-card__image">
+                    class="stylist-card__image rounded-card shadow-lg bg-foreground aspect-[3/4] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
                     <div class="presentation text-ink">
                         <h4>
                             Marcus Thorne
@@ -188,126 +211,126 @@
                     <p class="font-medium">
                         Specialty: Traditional Straight-Razor Shaves & Modern Sculpting
                     </p>
-                    <span class="pl-4 ml-2 text-2xl font-medium border-l-2 border-l-ink font-display">
+                    <span class="pl-4 ml-2 text-lg md:text-2xl font-medium border-l-2 border-l-ink font-display text-neutral italic">
                         "Precision is the bridge between trend and timelessness."
                     </span>
                 </article>
             </div>
-            <div class="py-12 my-16 text-center stylist-statement bg-ink">
-                <h1 class="leading-16 text-surface">
+            <div class="reveal-on-scroll py-16 md:py-24 my-24 md:my-32 text-center stylist-statement bg-ink rounded-card shadow-lg px-4 max-w-6xl mx-auto">
+                <h1 class="leading-tight text-3xl md:text-5xl lg:text-6xl text-surface uppercase font-display font-bold">
                     Exceptional talent.
                     <br>
-                    <span class="text-brand">
+                    <span class="text-brand block mt-2">
                         Unparalleled vision.
                     </span>
                 </h1>
             </div>
         </section>
 
-        <section id="gallery" class="section section--gallery">
-            <h1 class="w-full text-center uppercase">
+        <section id="gallery" class="section section--gallery max-w-6xl mx-auto px-4 mt-24 md:mt-32 scroll-mt-24">
+            <h1 class="w-full text-center uppercase reveal-on-scroll">
                 The Artistry Archive
             </h1>
-            <p class="w-full p-5 text-center text-neutral">
+            <p class="w-full max-w-2xl mx-auto pt-4 pb-8 text-center text-neutral text-sm md:text-base reveal-on-scroll">
                 Hair is more than a canvas; it is a sculptural medium. Our archive showcases the meticulous craftsmanship, avant-garde techniques, and bespoke elegance defining LUMIA Studio's approach to structural and fluid hair design.
             </p>
 
-            <div class="gap-5 space-y-5 columns-1 sm:columns-2 md:columns-3">
-                <div class="break-inside-avoid">
-                    <img class="w-full h-auto rounded-lg" src="./img/cut/cut1.webp" alt="Taglio1">
+            <div id="gallery-grid" class="gap-6 space-y-6 columns-1 sm:columns-2 md:columns-3 mt-8">
+                <div class="break-inside-avoid overflow-hidden rounded-card group/gallery cursor-pointer relative bg-ink shadow-md">
+                    <img class="w-full h-auto rounded-card transition-all duration-700 ease-out group-hover/gallery:scale-105 group-hover/gallery:opacity-90" src="./img/cut/cut1.webp" alt="Taglio1">
                 </div>
-                <div class="break-inside-avoid">
-                    <img class="w-full h-auto rounded-lg" src="./img/cut/cut2.webp" alt="Taglio2">
+                <div class="break-inside-avoid overflow-hidden rounded-card group/gallery cursor-pointer relative bg-ink shadow-md">
+                    <img class="w-full h-auto rounded-card transition-all duration-700 ease-out group-hover/gallery:scale-105 group-hover/gallery:opacity-90" src="./img/cut/cut2.webp" alt="Taglio2">
                 </div>
-                <div class="break-inside-avoid">
-                    <img class="w-full h-auto rounded-lg" src="./img/cut/cut3.webp" alt="Taglio3">
+                <div class="break-inside-avoid overflow-hidden rounded-card group/gallery cursor-pointer relative bg-ink shadow-md">
+                    <img class="w-full h-auto rounded-card transition-all duration-700 ease-out group-hover/gallery:scale-105 group-hover/gallery:opacity-90" src="./img/cut/cut3.webp" alt="Taglio3">
                 </div>
-                <div class="break-inside-avoid">
-                    <img class="w-full h-auto rounded-lg" src="./img/cut/cut5.webp" alt="Taglio5">
+                <div class="break-inside-avoid overflow-hidden rounded-card group/gallery cursor-pointer relative bg-ink shadow-md">
+                    <img class="w-full h-auto rounded-card transition-all duration-700 ease-out group-hover/gallery:scale-105 group-hover/gallery:opacity-90" src="./img/cut/cut5.webp" alt="Taglio5">
                 </div>
-                <div class="break-inside-avoid">
-                    <img class="w-full h-auto rounded-lg" src="./img/cut/cut4.webp" alt="Taglio4">
+                <div class="break-inside-avoid overflow-hidden rounded-card group/gallery cursor-pointer relative bg-ink shadow-md">
+                    <img class="w-full h-auto rounded-card transition-all duration-700 ease-out group-hover/gallery:scale-105 group-hover/gallery:opacity-90" src="./img/cut/cut4.webp" alt="Taglio4">
                 </div>
-                <div class="break-inside-avoid">
-                    <img class="w-full h-auto rounded-lg" src="./img/cut/cut6.webp" alt="Taglio6">
+                <div class="break-inside-avoid overflow-hidden rounded-card group/gallery cursor-pointer relative bg-ink shadow-md">
+                    <img class="w-full h-auto rounded-card transition-all duration-700 ease-out group-hover/gallery:scale-105 group-hover/gallery:opacity-90" src="./img/cut/cut6.webp" alt="Taglio6">
                 </div>
             </div>
             
         </section>
 
-        <section id="info" class="flex items-center justify-between p-12 my-12 bg-foreground">
-            <div class="flex flex-col justify-start gap-4">
+        <section id="info" class="reveal-on-scroll flex flex-col md:flex-row items-center md:items-stretch justify-between gap-12 p-8 md:p-16 my-24 md:my-32 bg-foreground max-w-6xl mx-4 md:mx-auto rounded-card shadow-lg border border-ink/5 scroll-mt-24">
+            <div class="flex flex-col justify-start gap-6 w-full md:w-2/3">
                 <h3>
                     Visit The Studio
                 </h3>
-                <p>
+                <p class="text-neutral text-sm md:text-base -mt-2">
                     Experience the pinnacle of hair artistry in the heart of the city.
                 </p>
-                <ul class="flex flex-col gap-4">
+                <ul class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-4">
                     <li>
-                        <span class="text-primary">
+                        <span class="text-primary font-bold">
                             Address
                         </span>
-                        <p>
-                            124 Luxury Row, Atelier District, NY 10012
+                        <p class="text-sm md:text-base text-neutral leading-relaxed">
+                            124 Luxury Row,<br>Atelier District, NY 10012
                         </p>
                     </li>
                     <li>
-                        <span class="text-primary">
+                        <span class="text-primary font-bold">
                             Hours
                         </span>
-                        <p>
-                            Tue – Sat: 10am – 8pm
+                        <p class="text-sm md:text-base text-neutral leading-relaxed">
+                            Tue – Sat:<br>10am – 8pm
                         </p>
                     </li>
                     <li>
-                        <span class="text-primary" >
+                        <span class="text-primary font-bold" >
                             Phone
                         </span>
-                        <p>
+                        <p class="text-sm md:text-base text-neutral leading-relaxed">
                             +1 (212) 555-0198
                         </p>
                     </li>
                 </ul>
             </div>
-            <div class="contact-section__cta">
-                <button type="button"
-                class="px-4 py-2 bg-brand rounded-card">
-                    <a href="tel:+1 (212) 555-0198">Book Your Appointment</a>
-                </button>
+            <div class="contact-section__cta flex items-center justify-center w-full md:w-1/3 md:justify-end">
+                <a href="tel:+12125550198" class="inline-flex items-center justify-center px-8 py-4.5 bg-brand text-ink text-base font-bold rounded-card shadow-md hover:bg-brand/90 hover:scale-105 active:scale-95 transition-all duration-300 w-full sm:w-auto text-center cursor-pointer tracking-wider uppercase">
+                    Book Your Appointment
+                </a>
             </div>
         </section>
     </main>
 
-    <footer class="flex items-center justify-between px-12 py-16">
-        <div>
-            <h1>
+    <footer class="border-t border-ink/5 bg-surface px-6 md:px-12 py-12 md:py-16 mt-24">
+        <div class="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between gap-8">
+            <div class="text-center md:text-left">
+                <h2 class="text-xl md:text-2xl font-bold font-display text-ink uppercase tracking-wider">
                 Aura Studio
-            </h1>
-            <br>
-            <p>
+            </h2>
+            <p class="text-xs text-neutral/80 mt-3 font-medium">
                 &copy 2026 Aura Studio. ALL RIGHTS RESERVED
             </p>
         </div>
-        <nav class="">
-            <ul class="flex items-center gap-5 justify-baseline">
+        <nav class="w-full md:w-auto">
+            <ul class="flex flex-wrap items-center justify-center gap-6 text-sm font-medium text-neutral">
                 <li>
-                    <a href="#">Instagram</a>
+                    <a href="#" class="hover:text-brand transition-colors duration-300">Instagram</a>
                 </li>
                 <li>
-                    <a href="#">TikTok</a>
+                    <a href="#" class="hover:text-brand transition-colors duration-300">TikTok</a>
                 </li>
                 <li>
-                    <a href="#">Facebook</a>
+                    <a href="#" class="hover:text-brand transition-colors duration-300">Facebook</a>
                 </li>
                 <li>
-                    <a href="#">Terms</a>
+                    <a href="#" class="hover:text-brand transition-colors duration-300">Terms</a>
                 </li>
                 <li>
-                    <a href="#">Privacy</a>
+                    <a href="#" class="hover:text-brand transition-colors duration-300">Privacy</a>
                 </li>
             </ul>
         </nav>
+        </div>
     </footer>
 
     <script src="./node_modules/lenis/dist/lenis.min.js"></script>
